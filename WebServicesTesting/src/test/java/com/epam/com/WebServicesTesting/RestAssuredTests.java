@@ -16,7 +16,6 @@ public class RestAssuredTests {
 	@Test
 	public void verifyStatus(){
 		Response response = RestAssured.given().get("/users").andReturn();
-//		response.asString();
 		String actualStatusCode  = response.getStatusLine();
 		Assert.assertTrue(actualStatusCode.contains("200 OK"), "Response Status code is not matching the expected Status");
 	}
